@@ -1,35 +1,115 @@
 import React from "react";
-
+import SwiperCore, { Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
+import "./Banner.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import img1 from "../../../assets/basketball.jpg";
-import img2 from "../../../assets/cricket.jpg";
-import img3 from "../../../assets/football.jpg";
-import img4 from "../../../assets/tennis.jpg";
-import img5 from "../../../assets/virgil-cayasa-qhfR7ClZABA-unsplash.jpg";
+import basketballImage from "../../../assets/basketball.jpg";
+import cricketImage from "../../../assets/cricket.jpg";
+import footballImage from "../../../assets/football.jpg";
+import tennisImage from "../../../assets/tennis.jpg";
+import virgilImage from "../../../assets/virgil-cayasa-qhfR7ClZABA-unsplash.jpg";
+
+SwiperCore.use([Pagination, Autoplay]);
 
 const Banner = () => {
   return (
-    <div className="h-1/3">
-      <Carousel>
-        <div className="h-full" >
-          <img className="h-full" src={img1} />
+    <Swiper
+      spaceBetween={30}
+      slidesPerView={1}
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 3000 }}
+    >
+      <SwiperSlide
+        className="banner-item"
+        style={{
+          backgroundImage: `url(${basketballImage})`,
+        }}
+      >
+        <div className="slider-text text-white text-center my-60">
+          <h2 className=" h-full text-5xl font-bold">
+            Welcome To Sports Arena <br/>Sports Academies
+          </h2>
+          <p className=" h-full text-xl font-semibold my-5">
+          Professional sports instruction in a traditional camp environment. 
+          </p>
+
+          <button className="btn glass text-white hover:text-black">Learn More</button>
         </div>
-        <div className="h-full" >
-          <img className="h-full" src={img2} />
+      </SwiperSlide>
+      <SwiperSlide
+        className="banner-item"
+        style={{
+          backgroundImage: `url(${cricketImage})`,
+        }}
+      >
+        <div className="slider-text text-white text-center my-60">
+          <h2 className=" h-full text-5xl font-bold">
+            Welcome To Sports Arena <br/>Sports Academies
+          </h2>
+          <p className=" h-full text-xl font-semibold my-5">
+          Professional sports instruction in a traditional camp environment. 
+          </p>
+
+          <button className="btn glass text-white hover:text-black">Learn More</button>
         </div>
-        <div className="h-full" >
-          <img className="h-full" src={img3} />
+      </SwiperSlide>
+      <SwiperSlide
+        className="banner-item"
+        style={{
+          backgroundImage: `url(${footballImage})`,
+        }}
+      >
+        <div className="slider-text text-white text-center my-60">
+          <h2 className=" h-full text-5xl font-bold">
+            Welcome To Sports Arena <br/>Sports Academies
+          </h2>
+          <p className=" h-full text-xl font-semibold my-5">
+          Professional sports instruction in a traditional camp environment. 
+          </p>
+
+          <button className="btn glass text-white hover:text-black">Learn More</button>
         </div>
-        <div className="h-full" >
-          <img className="h-full" src={img4} />
+      </SwiperSlide>
+      <SwiperSlide
+        className="banner-item"
+        style={{
+          backgroundImage: `url(${tennisImage})`,
+        }}
+      >
+        <div className="slider-text text-white text-center my-60">
+          <h2 className=" h-full text-5xl font-bold">
+            Welcome To Sports Arena <br/>Sports Academies
+          </h2>
+          <p className=" h-full text-xl font-semibold my-5">
+          Professional sports instruction in a traditional camp environment. 
+          </p>
+
+          <button className="btn glass text-white hover:text-black">Learn More</button>
         </div>
-        <div className="h-full" >
-          <img className="h-full" src={img5} />
+      </SwiperSlide>
+      <SwiperSlide
+        className="banner-item"
+        style={{
+          backgroundImage: `url(${virgilImage})`,
+        }}
+      >
+        <div className="slider-text text-white text-center my-60">
+          <h2 className=" h-full text-5xl font-bold">
+            Welcome To Sports Arena <br/>Sports Academies
+          </h2>
+          <p className=" h-full text-xl font-semibold my-5">
+          Professional sports instruction in a traditional camp environment. 
+          </p>
+
+          <button className="btn glass text-white hover:text-black">Learn More</button>
         </div>
-      </Carousel>
-      </div>
+      </SwiperSlide>
+    </Swiper>
   );
 };
 
 export default Banner;
+
+
