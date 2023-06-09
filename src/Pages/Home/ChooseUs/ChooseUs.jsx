@@ -11,7 +11,7 @@ const ChooseUs = () => {
   return (
     <section className="my-5">
       <Container>
-        <div className="section-title mx-auto text-center w-full lg:w1/2 mb-6">
+        <div className="section-title mx-auto text-center lg:w-1/2 mb-6">
           <h2 className="text-3xl font-bold underline mb-2">Why Choose Us</h2>
           <p className="text-lg">
             We, at Sports Arena,believe in building a strong foundation for
