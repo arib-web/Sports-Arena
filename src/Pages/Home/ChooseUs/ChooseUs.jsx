@@ -6,20 +6,23 @@ import strategy from "../../../assets/strategy.png";
 import player from "../../../assets/football-player.png";
 import esastrategy from "../../../assets/esa-strategy.png";
 import award from "../../../assets/award.png";
+import { Slide } from "react-awesome-reveal";
 
 const ChooseUs = () => {
   return (
     <section className="my-5">
       <Container>
-        <div className="section-title mx-auto text-center lg:w-1/2 mb-6">
-          <h2 className="text-3xl font-bold underline mb-2">Why Choose Us</h2>
-          <p className="text-lg">
-            We, at Sports Arena,believe in building a strong foundation for
-            players by teaching them strong values,perseverance and diligence
-            whilst they learnvaluable techniques and skills to become ultimate
-            game changers!-
-          </p>
-        </div>
+        <Slide triggerOnce={1}>
+          <div className=" mx-auto text-center lg:w-1/2 mb-6">
+            <h2 className="text-3xl font-bold underline mb-2">Why Choose Us</h2>
+            <p className="text-lg">
+              We, at Sports Arena,believe in building a strong foundation for
+              players by teaching them strong values,perseverance and diligence
+              whilst they learnvaluable techniques and skills to become ultimate
+              game changers!-
+            </p>
+          </div>
+        </Slide>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="card w-96 glass">
             <figure className="mt-2">
@@ -85,7 +88,8 @@ const ChooseUs = () => {
             </figure>
             <div className="card-body text-center">
               <h2 className="text-2xl font-bold">The Fundamentals</h2>
-              <p>Our classes are designed to improve balance and full body
+              <p>
+                Our classes are designed to improve balance and full body
                 coordination as well as strength and development through sensory
                 stimulation while reinforcing good social and sportsman skills.
               </p>
@@ -98,7 +102,9 @@ const ChooseUs = () => {
             </figure>
             <div className="card-body text-center">
               <h2 className="text-2xl font-bold">Results</h2>
-              <p>Our philosophy is to teach the beautiful game, enjoy the beautiful game and make memories that will last a lifetime.
+              <p>
+                Our philosophy is to teach the beautiful game, enjoy the
+                beautiful game and make memories that will last a lifetime.
               </p>
             </div>
           </div>
