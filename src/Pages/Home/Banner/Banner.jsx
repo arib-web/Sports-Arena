@@ -1,5 +1,5 @@
 import React from "react";
-import SwiperCore, { Pagination, Autoplay } from "swiper";
+import SwiperCore, { Pagination,Navigation  } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "./Banner.css";
@@ -9,9 +9,9 @@ import basketballImage from "../../../assets/basketball.jpg";
 import cricketImage from "../../../assets/cricket.jpg";
 import footballImage from "../../../assets/football.jpg";
 import tennisImage from "../../../assets/tennis.jpg";
-import virgilImage from "../../../assets/virgil-cayasa-qhfR7ClZABA-unsplash.jpg";
+import footballImage2 from "../../../assets/virgil-cayasa-qhfR7ClZABA-unsplash.jpg";
 
-SwiperCore.use([Pagination, Autoplay]);
+SwiperCore.use([Pagination,Navigation]);
 
 const Banner = () => {
   return (
@@ -19,7 +19,7 @@ const Banner = () => {
       spaceBetween={30}
       slidesPerView={1}
       pagination={{ clickable: true }}
-      autoplay={{ delay: 3000 }}
+      navigation={true}
     >
       <SwiperSlide
         className="banner-item"
@@ -92,7 +92,7 @@ const Banner = () => {
       <SwiperSlide
         className="banner-item"
         style={{
-          backgroundImage: `url(${virgilImage})`,
+          backgroundImage: `url(${footballImage2})`,
         }}
       >
         <div className="slider-text text-white text-center my-60">
