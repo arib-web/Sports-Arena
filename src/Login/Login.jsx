@@ -1,29 +1,47 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import login from "../assets/undraw_innovative_re_rr5i.svg";
 import { Roll } from "react-awesome-reveal";
+import { AuthContext } from "../Provider/AuthProviders";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const {
     handleSubmit,
+    reset,
     register,
     formState: { errors },
   } = useForm();
+
   const [showPassword, setShowPassword] = useState(false);
 
+  const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
-    // Perform login logic here
-    console.log(data);
+    const { email, password,name } = data;
+    signIn(email, password).then((result) => {
+      const user = result.user;
+      reset();
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "User Login Successfully.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      navigate("/");
+    });
   };
 
   return (
     <div className="flex items-center justify-center h-screen bg-blue-200">
       <div className="relative w-full max-w-4xl">
         <img src={login} alt="" className="w-full h-auto" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-lg shadow-md p-6">
-        <Roll triggerOnce={1}>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-lg shadow-md p-6">
+          <Roll triggerOnce={1}>
             <form>
               <h2 className="mb-4 text-2xl font-bold">Login</h2>
               <div className="mb-4">
@@ -82,8 +100,8 @@ const Login = () => {
                 </Link>
               </p>
             </form>
-        </Roll>
-          </div>
+          </Roll>
+        </div>
       </div>
     </div>
   );
