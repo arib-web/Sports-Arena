@@ -7,22 +7,13 @@ import player from "../../../assets/football-player.png";
 import esastrategy from "../../../assets/esa-strategy.png";
 import award from "../../../assets/award.png";
 import { Slide } from "react-awesome-reveal";
+import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const ChooseUs = () => {
   return (
     <section className="my-5">
       <Container>
-        <Slide triggerOnce={1}>
-          <div className=" mx-auto text-center lg:w-1/2 mb-6">
-            <h2 className="text-3xl font-bold underline mb-2">Why Choose Us</h2>
-            <p className="text-lg">
-              We, at Sports Arena,believe in building a strong foundation for
-              players by teaching them strong values,perseverance and diligence
-              whilst they learnvaluable techniques and skills to become ultimate
-              game changers!-
-            </p>
-          </div>
-        </Slide>
+        <SectionTitle heading='Why Choose Us'></SectionTitle>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           <div className="card w-full glass">
             <figure className="mt-2">
