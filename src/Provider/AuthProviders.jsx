@@ -28,22 +28,11 @@ const AuthProviders = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const updateUser = (name, photo) => {
-    setLoading(true);
-    const user = auth.currentUser;
-
-    return updateProfile(user, {
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
-    })
-      .then(() => {
-        console.log("User profile updated successfully");
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error updating user profile:", error);
-        setLoading(false);
-      });
+    });
   };
 
   const logOut = () => {
@@ -71,7 +60,7 @@ const AuthProviders = ({ children }) => {
     user,
     loading,
     createUser,
-    updateUser,
+    updateUserProfile,
     logInUser,
     signInWithGoogle,
     logOut,
