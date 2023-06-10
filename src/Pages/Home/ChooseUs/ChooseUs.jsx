@@ -23,8 +23,8 @@ const ChooseUs = () => {
             </p>
           </div>
         </Slide>
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="card w-96 glass">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+          <div className="card w-full glass">
             <figure className="mt-2">
               <img src={coach} alt="car!" />
             </figure>
@@ -39,7 +39,7 @@ const ChooseUs = () => {
             </div>
           </div>
           {/* card-1  */}
-          <div className="card w-96 glass">
+          <div className="card w-full glass">
             <figure className="mt-2">
               <img src={networking} alt="coaching" />
             </figure>
@@ -53,7 +53,7 @@ const ChooseUs = () => {
             </div>
           </div>
           {/* card-2  */}
-          <div className="card w-96 glass">
+          <div className="card w-full glass">
             <figure className="mt-2">
               <img src={strategy} alt="strategy" />
             </figure>
@@ -67,7 +67,7 @@ const ChooseUs = () => {
             </div>
           </div>
           {/* card-3  */}
-          <div className="card w-96 glass">
+          <div className="card w-full glass">
             <figure className="mt-2">
               <img src={player} alt="player" />
             </figure>
@@ -82,7 +82,7 @@ const ChooseUs = () => {
             </div>
           </div>
           {/* card-4  */}
-          <div className="card w-96 glass">
+          <div className="card w-full glass">
             <figure className="mt-2">
               <img src={esastrategy} alt="player" />
             </figure>
@@ -96,7 +96,7 @@ const ChooseUs = () => {
             </div>
           </div>
           {/* card-5  */}
-          <div className="card w-96 glass">
+          <div className="card w-full glass">
             <figure className="mt-2">
               <img src={award} alt="award" />
             </figure>

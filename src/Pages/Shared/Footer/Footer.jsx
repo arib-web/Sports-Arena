@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="bg-neutral">
       <Container>
-        <footer className="footer text-white p-10">
+        <footer className="footer text-white py-10">
           <div>
             <img src={logo} className="w-28" alt="" />
             <p className="text-lg font-bold">Sports Arena Ltd.</p>

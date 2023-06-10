@@ -20,7 +20,7 @@ const Banner = () => {
       slidesPerView={1}
       pagination={{ clickable: true }}
       navigation={true}
-      autoplay={{ delay: 2000 }}
+      autoplay={{ delay: 3000 }}
     >
       <SwiperSlide
         className="banner-item"

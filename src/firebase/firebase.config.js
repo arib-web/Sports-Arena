@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBERHYEYRIEGRnwo1IWZmIBjnvBjqUDDGs",
-  authDomain: "sports-arena-client.firebaseapp.com",
-  projectId: "sports-arena-client",
-  storageBucket: "sports-arena-client.appspot.com",
-  messagingSenderId: "765498624947",
-  appId: "1:765498624947:web:26529fbfbff1f5d0fc59c6"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
