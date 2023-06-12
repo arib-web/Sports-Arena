@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark-theme {
+    /* Define your dark theme styles here */
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.light-theme {
+    /* Define your light theme styles here */
+    background-color: #ffffff;
+    color: #1e1e1e;
+}

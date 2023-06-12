@@ -11,9 +11,11 @@ import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 
 const ChooseUs = () => {
   return (
-    <section className="my-5">
+    <section
+      className="my-5 "
+    >
       <Container>
-        <SectionTitle heading='Why Choose Us'></SectionTitle>
+        <SectionTitle heading="Why Choose Us"></SectionTitle>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           <div className="card w-full glass">
             <figure className="mt-2">

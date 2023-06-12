@@ -17,26 +17,28 @@ const Signup = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  const onSubmit = async (data) => {
+    try {
+      const result = await createUser(data.email, data.password);
+      const loggedUser = result.user;
+      console.log(loggedUser);
 
-  const onSubmit = (data) => {
-    createUser(data.email, data.password)
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        updateUserProfile(data.name, data.photoURL);
-        reset(); // Add this line to reset the form
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "User created successfully.",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
+      if (data.photoURL) {
+        await updateUserProfile(data.name, data.photoURL);
+      }
+
+      reset();
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "User created successfully.",
+        showConfirmButton: false,
+        timer: 1500,
       });
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -89,10 +91,15 @@ const Signup = () => {
                     minLength: {
                       value: 6,
                       message: "Password must have at least 6 characters",
-                      minLength: 6,
-                      maxLength: 20,
-                      pattern:
-                        /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                    },
+                    maxLength: {
+                      value: 20,
+                      message: "Password must be less than 20 characters",
+                    },
+                    pattern: {
+                      value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
+                      message:
+                        "Password must have one uppercase, one lowercase, one number, and one special character",
                     },
                   })}
                   className="w-full px-3 py-2 border border-gray-300 rounded"
@@ -101,20 +108,6 @@ const Signup = () => {
                   <span className="text-red-500">
                     {errors.password.message}
                   </span>
-                )}
-                {errors.password?.type === "minLength" && (
-                  <p className="text-red-600">Password must be 6 characters</p>
-                )}
-                {errors.password?.type === "maxLength" && (
-                  <p className="text-red-600">
-                    Password must be less than 20 characters
-                  </p>
-                )}
-                {errors.password?.type === "pattern" && (
-                  <p className="text-red-600">
-                    Password must have one Uppercase one lower case, one number
-                    and one special character.
-                  </p>
                 )}
               </div>
               <div className="mb-4">

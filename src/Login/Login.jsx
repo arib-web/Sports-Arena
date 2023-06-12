@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import login from "../assets/undraw_innovative_re_rr5i.svg";
@@ -14,11 +14,14 @@ const Login = () => {
     register,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const { signIn } = useContext(AuthContext);
+  const from = location.state?.from?.pathname || "/";
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const { signIn } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const { email, password,name } = data;
@@ -32,7 +35,7 @@ const Login = () => {
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate("/");
+      navigate(from, { replace: true });
     });
   };
 

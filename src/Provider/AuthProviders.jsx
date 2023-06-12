@@ -18,6 +18,13 @@ const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
+
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -29,10 +36,21 @@ const AuthProviders = ({ children }) => {
   };
 
   const updateUserProfile = (name, photo) => {
-    return updateProfile(auth.currentUser, {
+    setLoading(true);
+    const user = auth.currentUser;
+
+    return updateProfile(user, {
       displayName: name,
       photoURL: photo,
-    });
+    })
+      .then(() => {
+        console.log("User profile updated successfully");
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error updating user profile:", error);
+        setLoading(false);
+      });
   };
 
   const logOut = () => {
@@ -64,6 +82,8 @@ const AuthProviders = ({ children }) => {
     signIn,
     signInWithGoogle,
     logOut,
+    theme,
+    toggleTheme,
   };
 
   return (
