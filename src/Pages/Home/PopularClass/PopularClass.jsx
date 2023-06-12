@@ -8,7 +8,7 @@ const PopularClass = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:5000/classes`);
+      const response = await fetch(`https://sports-arena-server.vercel.app/classes`);
       const data = await response.json();
       setClasses(data);
     };
